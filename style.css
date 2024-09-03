@@ -1,0 +1,698 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:wght@300,400,500,600,700,800,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bg-color: #081b29;
+  --second--bg-color: #112e42;
+  --text-color: #ededed;
+  --main-color: #00abf0;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.header {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  padding: 2rem 9%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: 0.3s;
+}
+
+.header.sticky {
+  background: var(--bg-color);
+}
+
+.logo {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.navbar a {
+  font-size: 1.7rem;
+  color: var(--text-color);
+  font-weight: 500;
+  margin-left: 3.5rem;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: var(--main-color);
+}
+
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--text-color);
+  cursor: pointer;
+  display: none;
+}
+
+Section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  padding: 0 9%;
+  background: url(home2.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.home-content {
+  max-width: 60rem;
+}
+
+.home-content h1 span {
+  color: var(--text-color);
+}
+
+.home-content h1 {
+  font-size: 5.6rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.home-content .text-animate {
+  position: relative;
+  width: 32.8rem;
+}
+
+.home-content .text-animate h3 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 0.7px var(--main-color);
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
+  overflow: hidden; /* Hides any overflowed text */
+  text-overflow: ellipsis; /* Adds "..." if text overflows */
+}
+
+.home-content p {
+  font-size: 1.6rem;
+  margin: 2rem 0 4rem;
+}
+
+.btn-box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 34.5rem;
+  height: 5rem;
+}
+
+.btn-box .btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 100%;
+  background: var(--main-color);
+  border: 0.2rem solid var(--main-color);
+  border-radius: 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: var(--bg-color);
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.btn-box .btn:hover {
+  color: var(--main-color);
+}
+
+.btn-box .btn:nth-child(2) {
+  background: transparent;
+  color: var(--main-color);
+}
+
+.btn-box .btn:nth-child(2):hover {
+  color: var(--bg-color);
+}
+
+.btn-box .btn:nth-child(2)::before {
+  background: var(--main-color);
+}
+
+.btn-box .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--bg-color);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.btn-box .btn:hover::before {
+  width: 100%;
+}
+
+.home-sci {
+  position: absolute;
+  bottom: 4rem;
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-sci a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--main-color);
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.home-sci a:hover {
+  color: var(--bg-color);
+}
+
+.home-sci a::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 0%;
+  height: 100%;
+  background: var(--main-color);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.home-sci a:hover::before {
+  width: 100%;
+}
+
+.home-imgHover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+
+  transition: 3s;
+}
+
+.home-imgHover:hover {
+  background: var(--bg-color);
+  opacity: 0.8;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: column;
+  flex-direction: column;
+  gap: 2rem;
+  background: var(--second--bg-color);
+  padding-bottom: 6rem;
+}
+
+.heading {
+  font-size: 5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.heading span {
+  margin-left: 10px; /* Adjust space between "About" and "Me" */
+}
+span {
+  color: var(--main-color);
+}
+
+.about {
+  text-align: center; /* Centers all content in the section */
+  padding: 40px 20px; /* Adds padding to the section */
+}
+
+.about-img {
+  display: flex; /* Uses Flexbox to center the content */
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+  margin: 0 auto; /* Centers the image container within the section */
+  width: 25rem; /* Sets the width of the container */
+  height: 25rem; /* Sets the height of the container */
+  border-radius: 50%; /* Makes the container circular */
+  position: relative; /* Positions any child elements relative to this container */
+  padding: 20px; /* Adds padding around the image */
+}
+
+.about-img img {
+  max-width: 100%; /* Ensures the image doesn't exceed the container's size */
+  height: auto; /* Maintains the aspect ratio of the image */
+  border-radius: 50%; /* Rounds the image to match the circular container */
+  border: 0.2rem solid var(--main-color); /* Adds a border around the image */
+  display: block; /* Removes any extra space below the image */
+}
+
+.about-img img {
+  width: 90%;
+  border-radius: 50%;
+  border: 0.2rem solid var(--main-color);
+}
+
+.btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.about-img .circle-spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border-top: 0.2rem solid var(--second--bg-color);
+  border-bottom: 0.2rem solid var(--second--bg-color);
+  border-left: 0.2rem solid var(--main-color);
+  border-right: 0.2rem solid var(--main-color);
+}
+
+.about-content h3 {
+  font-size: 2.6rem;
+  margin: 2rem 0 3rem;
+}
+
+.about-content p {
+  font-size: 1.6rem;
+  margin: 2rem 0 3rem;
+}
+
+.btn-box.btns {
+  display: inline-block;
+  width: 15rem;
+}
+
+.btn-box.btns a::before {
+  background: var(--second--bg-color);
+}
+
+.experience {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Changed to flex-start for better alignment */
+  flex-direction: column;
+  padding-bottom: 5rem;
+}
+
+.experience-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+
+.experience-column {
+  flex: 1;
+}
+
+.experience-column-left {
+  flex: 2; /* Adjust the width of the left column */
+}
+
+.experience-column-right {
+  flex: 1; /* Adjust the width of the right column */
+}
+
+.experience-column .title {
+  font-size: 2.5rem;
+  margin: 0 0 1.5rem 2rem;
+}
+
+.experience-column .experience-box {
+  border-left: 0.2rem solid var(--main-color);
+}
+
+.experience-box .experience-content {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.experience-content .content {
+  position: relative;
+  padding: 2rem;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.experience-content .content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--second--bg-color);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.experience-content .content:hover::before {
+  width: 100%;
+}
+
+.experience-content ul {
+  padding-left: 1.5rem;
+}
+
+.experience-content .content .year {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  padding-bottom: 0.5rem;
+}
+
+.experience-box .experience-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1.1rem;
+  width: 2rem;
+  height: 2rem;
+  background: var(--main-color);
+  border-radius: 50%;
+}
+
+.experience-content .content .year i {
+  padding-right: 0.5rem;
+}
+
+.experience-content .content h3 {
+  font-size: 2rem;
+}
+
+.experience-content .content ul {
+  font-size: 1.6rem;
+  padding-top: 0.5rem;
+}
+
+.experience-content .content h4 {
+  font-size: 1.6rem;
+  padding-top: 0.5rem;
+}
+
+.skills {
+  min-height: auto;
+  padding-bottom: 7rem;
+  background: var(--second--bg-color);
+}
+
+.skills .skills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+.skills-row .skills-column {
+  flex: 1 1 40rem;
+}
+
+.skills-column .title {
+  font-size: 2.5rem;
+  margin: 0 1.5rem;
+}
+
+.skills-box .skills-content {
+  position: relative;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 0.6rem;
+  padding: 0.5rem 1.5rem;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.skills-box .skills-content::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--bg-color);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.skills-box .skills-content:hover::before {
+  width: 100%;
+}
+
+.skills-content .progress {
+  padding: 1rem 0;
+}
+
+.skills-content .progress h3 {
+  font-size: 1.7rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.skills-content .progress h3 span {
+  color: var(--text--bg-color);
+}
+
+.skills-content .progress .bar {
+  height: 2.5rem;
+  border-radius: 0.6rem;
+  border: 0.2rem solid var(--main-color);
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+
+.skills-content .progress .bar span {
+  display: block;
+  height: 100%;
+  border-radius: 0.3rem;
+  background: var(--main-color);
+}
+
+.skills-column:nth-child(1).skills-content .progress:nth-child(1).bar span {
+  width: 90%;
+}
+
+.skills-column:nth-child(1).skills-content .progress:nth-child(2).bar span {
+  width: 80%;
+}
+
+.skills-column:nth-child(1).skills-content .progress:nth-child(3).bar span {
+  width: 65%;
+}
+.skills-column:nth-child(1).skills-content .progress:nth-child(4).bar span {
+  width: 75%;
+}
+.skills-column:nth-child(2).skills-content .progress:nth-child(1).bar span {
+  width: 95%;
+}
+
+.skills-column:nth-child(2).skills-content .progress:nth-child(2).bar span {
+  width: 67%;
+}
+
+.skills-column:nth-child(2).skills-content .progress:nth-child(3).bar span {
+  width: 85%;
+}
+.skills-column:nth-child(2).skills-content .progress:nth-child(4).bar span {
+  width: 60%;
+}
+
+.certificates {
+  padding: 5rem 9%;
+  background: var(--bg-color);
+}
+
+.certificates .heading {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+.certificates .heading span {
+  color: var(--main-color);
+}
+
+.certificates-row {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  gap: 3rem; /* Spacing between items */
+}
+
+.certificate-item {
+  background: var(--bg-color);
+  border: 0.2rem solid var(--main-color);
+  border-radius: 1rem;
+  padding: 1.5rem; /* Reduced padding for medium size */
+  width: 100%;
+  max-width: 600px; /* Adjusted maximum width */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Slightly reduced shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.certificate-item img {
+  max-width: 80%; /* Adjusted to fit the medium size */
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem; /* Adjusted margin for spacing */
+}
+
+.certificate-item h3 {
+  font-size: 1.8rem; /* Slightly reduced font size */
+  color: var(--text-color);
+  margin-bottom: 0.75rem; /* Adjusted margin for spacing */
+}
+
+.certificate-item p {
+  font-size: 1.2rem; /* Slightly reduced font size */
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.certificate-item i {
+  color: var(--main-color);
+  margin-right: 0.5rem;
+}
+
+.certificate-item:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1rem 1.5rem rgba(5, 255, 201, 0.2); /* Slightly reduced shadow on hover */
+}
+
+@media (max-width: 768px) {
+  .certificate-item {
+    width: 100%;
+    max-width: 500px; /* Adjusted maximum width for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .certificate-item {
+    width: 100%;
+    max-width: 400px; /* Further adjusted maximum width for very small screens */
+  }
+}
+
+.projects {
+  padding: 5rem 9%;
+  background: var(--second--bg-color);
+}
+
+.projects .heading {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+.projects .heading span {
+  color: var(--main-color);
+}
+
+.projects-row {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  gap: 3rem; /* Spacing between items */
+}
+
+.project-item {
+  background: var(--bg-color);
+  border: 0.2rem solid var(--main-color);
+  border-radius: 1rem;
+  padding: 1.5rem; /* Medium padding for consistency */
+  width: 100%;
+  max-width: 600px; /* Maximum width similar to certificates */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Consistent shadow effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.project-item img {
+  max-width: 80%; /* Adjusted to fit the medium size */
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem; /* Spacing for image */
+}
+
+.project-item h3 {
+  font-size: 1.8rem; /* Consistent font size with certificates */
+  color: var(--text-color);
+  margin-bottom: 0.75rem; /* Spacing for heading */
+}
+
+.project-item p {
+  font-size: 1.2rem; /* Consistent font size with certificates */
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.project-item i {
+  color: var(--main-color);
+  margin-right: 0.5rem;
+}
+
+.project-item:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1rem 1.5rem rgba(5, 255, 201, 0.2); /* Consistent shadow effect on hover */
+}
+
+@media (max-width: 768px) {
+  .project-item {
+    width: 100%;
+    max-width: 500px; /* Adjusted maximum width for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .project-item {
+    width: 100%;
+    max-width: 400px; /* Further adjusted maximum width for very small screens */
+  }
+}
